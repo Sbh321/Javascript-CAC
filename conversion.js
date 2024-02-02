@@ -34,3 +34,4 @@ let obj1 = {
 console.log(obj1.name + " is " + obj1.age + " year old.");
 
 console.log(typeof obj1.name);
+console.log("dipesh");
