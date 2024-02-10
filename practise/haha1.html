@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body id="bd" style="background-color: black">
+    <p style="color: white">Background Change using DOM manipulation.</p>
+    <button id="red" onclick="fcn('red')">Red</button>
+    <button id="blue" onclick="fcn('blue')">Blue</button>
+    <br />
+    <input type="checkbox" id="autoToggle" onchange="toggleAuto()" />
+    <label for="autoToggle">Auto Toggle</label>
+  </body>
+  <script>
+    let body = document.getElementById("bd");
+    let autoToggleCheckbox = document.getElementById("autoToggle");
+    let intervalId;
+
+    function fcn(color) {
+      body.style.backgroundColor = color;
+    }
+
+    function toggleAuto() {
+      if (autoToggleCheckbox.checked) {
+        intervalId = setInterval(() => {
+          if (body.style.backgroundColor === "red") {
+            body.style.backgroundColor = "blue";
+          } else {
+            body.style.backgroundColor = "red";
+          }
+        }, 100);
+      } else {
+        clearInterval(intervalId);
+      }
+    }
+  </script>
+</html>

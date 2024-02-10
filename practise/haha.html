@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body class="bd" style="background-color: black">
+    <p style="color: white">Background Change using DOM manipulation.</p>
+    <button id="red" onclick="fcn('red')">Red</button>
+    <button id="blue" onclick="fcn('blue')">Blue</button>
+  </body>
+  <script>
+    function fcn(color) {
+      let bodi = document.getElementById("bd");
+
+      // Change the background color based on the provided color argument
+      if (color === "red") {
+        bodi.style.backgroundColor = "red";
+      } else if (color === "blue") {
+        bodi.style.backgroundColor = "blue";
+      }
+    }
+  </script>
+</html>
