@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating elements using DOM</title>
+  </head>
+  <body>
+    <script>
+      for (let index = 0; index < 5; index++) {
+        createDIV();
+      }
+      function createDIV() {
+        let div = document.createElement("div");
+        div.id = "divId";
+        div.title = "This is a DIV";
+        div.setAttribute("class", "divClass");
+
+        div.style.padding = "10px";
+        div.style.borderRadius = "5px";
+        div.style.color = "white";
+        div.style.backgroundColor = "green";
+        div.style.marginBottom = "10px";
+
+        // div.innerText = "HAHA a god damn DIV HAHA";
+        let textNode = document.createTextNode("HAHA a god damn DIV HAHA");
+        div.appendChild(textNode);
+
+        document.body.appendChild(div);
+        console.log(div);
+      }
+    </script>
+  </body>
+</html>

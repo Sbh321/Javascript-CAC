@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit list elements using DOM</title>
+  </head>
+  <body>
+    <p>Language List</p>
+    <ul id="list">
+      <li>Javascript</li>
+      <li>GoLang</li>
+    </ul>
+
+    <script>
+      let secondItem = document.querySelector("li:nth-child(2)");
+      let replacement = document.createElement("li");
+      replacement.textContent = "Python";
+      secondItem.replaceWith(replacement);
+
+      //OR
+
+      let firstItem = document.querySelector("li:nth-child(1)");
+      firstItem.outerHTML = "<li>TypeScript</li>";
+    </script>
+  </body>
+</html>

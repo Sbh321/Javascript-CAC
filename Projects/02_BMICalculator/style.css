@@ -1,0 +1,26 @@
+* {
+  font-family: sans-serif;
+}
+
+#container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+label {
+  margin-bottom: 15px;
+}
+
+input {
+  margin-bottom: 15px;
+}
+
+#info {
+  margin-bottom: 150px;
+}
+#calc {
+  width: 180px;
+  height: 40px;
+}

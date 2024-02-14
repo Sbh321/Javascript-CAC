@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="heading">
+      DOM Introduction <span style="display: none">1.1</span>
+    </h1>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+
+    <input type="password" />
+
+    <ul>
+      <li class="list-item" >one</li>
+      <li class="list-item" >two</li class="list-item" >
+      <li class="list-item" >three</li>
+    </ul>
+    <script>
+      let ele = document.querySelector("ul");
+      let tempList = ele.querySelectorAll("li");
+      console.log(tempList);
+      tempList.forEach( (item)=> {
+        item.style.backgroundColor = "Green"
+        item.style.marginBottom = "5px"
+        item.style.fontFamily = "sans-serif"
+        item.style.color = "white"
+        item.style.borderRadius = "5px"
+        item.innerHTML = "Modified using for each in DOM"
+      } )
+    </script>
+  </body>
+</html>

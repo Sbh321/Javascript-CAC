@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add list elements using DOM</title>
+  </head>
+  <body>
+    <p>Languages</p>
+    <ul id="languageList">
+      <li>JavaScript</li>
+    </ul>
+
+    <script>
+      function addList(language) {
+        const lis = "li";
+        const li = document.createElement(lis); //Here "" is necessary because we are providing an argrument to createElement function
+        li.appendChild(document.createTextNode(`${language}`));
+        document.querySelector("#languageList").appendChild(li);
+      }
+      addList("Python");
+    </script>
+  </body>
+</html>

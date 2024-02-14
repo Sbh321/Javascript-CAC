@@ -1,0 +1,27 @@
+* {
+  font-family: sans-serif;
+}
+
+.button {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-color: #ccc;
+  border-radius: 15px;
+  border: 1px solid black;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+#grey {
+  background: grey;
+}
+
+#white {
+  background: white;
+}
+#cyan {
+  background: cyan;
+}
+#yellow {
+  background: yellow;
+}
