@@ -2,7 +2,7 @@ const form = document.querySelector("form");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault(); //prevents the default operation when we submit a form
-  const height = parseInt(document.querySelector("#height").value); //we need to convert it into integer to peform calculation cause a string is returned from querySelector.value method
+  const height = parseInt(document.querySelector("#height").value); //we need to convert it into integer to peform calculation cause a string is returned from querySelector().value method where the input type is text
   const weight = parseInt(document.querySelector("#weight").value);
   const results = document.querySelector("#results");
 

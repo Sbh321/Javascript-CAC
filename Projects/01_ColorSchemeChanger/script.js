@@ -4,8 +4,9 @@ const body = document.querySelector("body");
 buttons.forEach((btn) => {
   console.log(btn);
   btn.addEventListener("click", (event) => {
+    //addEventListner method takes two parameters event and a call back funciton
     console.log(event);
-    console.log(event.target);
+    console.log(event.target); //event.target traces back the event(btn) for its attributes in a iteration
     console.log(event.target.id);
     if (event.target.id == "grey") {
       body.style.backgroundColor = "grey";

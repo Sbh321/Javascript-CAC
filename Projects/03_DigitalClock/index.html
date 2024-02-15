@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Your Local Time</title>
+    <style>
+      * {
+        font-family: sans-serif;
+      }
+      body {
+        background-color: #212121;
+        color: #fff;
+      }
+      .center {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 150px;
+      }
+      #clock {
+        font-size: 40px;
+        background-color: orange;
+        padding: 20px 50px;
+        margin-top: 10px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <div id="banner"><span>Your local time</span></div>
+      <div id="clock"></div>
+    </div>
+    <script>
+      const clock = document.getElementById("clock");
+
+      setInterval(() => {
+        const date = new Date();
+        clock.innerHTML = date.toLocaleTimeString(); // setInterval method takes two parameters a call back functions and, miliseconds value as interval
+      }, 1000);
+    </script>
+  </body>
+</html>
