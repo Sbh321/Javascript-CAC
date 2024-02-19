@@ -1,0 +1,60 @@
+<!-- Example of old http request using ajax for http request to retrive data from GITHUB API -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX</title>
+  </head>
+  <body>
+    <script>
+      // const reqUrl = "https://api.github.com/users/hiteshchoudhary";
+      // const xhr = new XMLHttpRequest();
+      // xhr.open("GET", reqUrl);
+
+      // xhr.onload = function () {
+      //   if (xhr.status >= 200 && xhr.status < 300) {
+      //     let data = JSON.parse(xhr.responseText);
+      //     console.log(data.followers);
+      //   } else {
+      //     console.error("Request failed with status:", xhr.status);
+      //   }
+      // };
+
+      // xhr.onerror = function () {
+      //   console.error("Request failed");
+      // };
+
+      // xhr.send();
+
+      const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+      const xhr = new XMLHttpRequest(); //This line creates a new instance of the XMLHttpRequest object.
+      xhr.open("GET", requestUrl); //This line initializes the GET request with given URL
+      //sets event handler to be called whenever the state of the XMLHttpRequest object changes.
+      xhr.onreadystatechange = function () {
+        // When you make an XMLHttpRequest, the browser sends the request asynchronously, meaning that it continues executing other code while waiting for the response from the server. The onreadystatechange event is triggered whenever the readyState property of the XMLHttpRequest object changes, indicating a transition to a new state in the request-response lifecycle.
+        console.log(xhr.readyState);
+        //     The readyState property of the XMLHttpRequest object indicates the state of the request. There are five possible values:
+
+        // 0: UNSENT - The object has been created, but open() has not been called yet.
+        // 1: OPENED - open() has been called.
+        // 2: HEADERS_RECEIVED - send() has been called, and the headers and status are available.
+        // 3: LOADING - Downloading; responseText holds partial data.
+        // 4: DONE - The operation is complete.
+        if (xhr.readyState === 4) {
+          //code checks if the request is in the DONE state.
+          if (xhr.status === 200) {
+            //checks it status code is 200. Status code 200 indicates a successful response from the server.
+            const data = JSON.parse(xhr.responseText); //parses the response from the server with is in string to JSON formt.
+            console.log(data);
+            console.log(data.followers); //logs the number of followers
+          } else {
+            console.error("Request failed with status:", xhr.status);
+          }
+        }
+      };
+      xhr.send(); //Sends the initialized request to the server.
+    </script>
+  </body>
+</html>

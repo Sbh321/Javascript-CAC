@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Set Timeout and Clear Timeout</title>
+  </head>
+  <body>
+    <h1>Subham Bhandari</h1>
+    <button id="btn">Stop</button>
+    <p>Click the button to stop the name change!</p>
+
+    <script>
+      // setInterval(() => {
+      //   console.log("After 2 seconds");
+      // }, 2000);
+
+      // const fxn = () => {
+      //   console.log("Utsav karki");
+      // };
+
+      // setInterval(fxn, 3000);
+
+      const fxn = function () {
+        console.log("Utsav Karki");
+      };
+
+      setInterval(fxn, 3000); //Just the reference of the function in first parameter
+
+      const haha = () => {
+        console.log("Hello User (after a 2 sec delay)");
+        document.querySelector("h1").innerHTML = "Utsav Karki";
+      };
+
+      const setTM = setTimeout(haha, 3000);
+
+      document.querySelector("#btn").addEventListener("click", () => {
+        clearTimeout(setTM); //referance of the variable with setTimeout method call
+        console.log("Time Out stopped for changing name!!");
+      });
+    </script>
+  </body>
+</html>

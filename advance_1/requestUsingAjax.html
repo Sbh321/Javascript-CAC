@@ -1,0 +1,85 @@
+<!-- Example of old http request using ajax for http request to retrive data from GITHUB API -->
+
+<!-- MAKE THE REQUEST BUTTON TO BE CLICKED ONLY ONCE AND TO CLICK AGAIN USER NEED TO RELOAD THE PAGE OR RE WRITE THE CODE WHERE WE CREATE THE ELEMENTS AND REPLACE THE TEXT/ATTRIBUTE EACH TIME WE CLICK THE BUTTON -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AJAX</title>
+    <style>
+      #userImage {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+      }
+      #userImage,
+      #userName,
+      #userFollowers {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>
+        Click the button to request data of user to Github API and display it in
+        console
+      </h1>
+      <button id="btn">Request</button>
+      <p id="info"></p>
+    </div>
+    <div id="user"></div>
+
+    <script>
+      let dataPhoto, dataName, dataFollowers;
+      document.querySelector("#btn").addEventListener("click", () => {
+        const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", requestUrl);
+        xhr.onreadystatechange = function () {
+          console.log(xhr.readyState);
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              const data = JSON.parse(xhr.responseText);
+              console.log(data);
+              dataPhoto = data.avatar_url;
+              dataName = data.name;
+              dataFollowers = data.followers;
+
+              const textNode = document.createTextNode(
+                "Open console to view full data received from API."
+              );
+              document.querySelector("#info").appendChild(textNode);
+
+              const user = document.querySelector("#user");
+
+              const img = document.createElement("img");
+              img.setAttribute("id", "userImage");
+              img.setAttribute("src", dataPhoto);
+              user.appendChild(img);
+
+              const p1 = document.createElement("p");
+              p1.setAttribute("id", "userName");
+              const textNode1 = document.createTextNode(`Name: ${dataName}`);
+              p1.appendChild(textNode1);
+              user.appendChild(p1);
+
+              const p2 = document.createElement("p");
+              p2.setAttribute("id", "userFollowers");
+              const textNode2 = document.createTextNode(
+                `Followers: ${dataFollowers}`
+              );
+              p2.appendChild(textNode2);
+              user.appendChild(p2);
+            } else {
+              console.error("Request failed with status:", xhr.status);
+            }
+          }
+        };
+        xhr.send(); //Sends the initialized request to the server.
+      });
+    </script>
+  </body>
+</html>

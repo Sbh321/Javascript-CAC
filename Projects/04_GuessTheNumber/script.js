@@ -1,3 +1,5 @@
+//Understand each line of code properly and style the page too and also think of styling previously guessed numbers array.
+
 let randNum = parseInt(Math.random() * 100 + 1);
 
 console.log(randNum);
@@ -18,7 +20,7 @@ let playGame = true;
 
 if (playGame) {
   submitBtn.addEventListener("click", (event) => {
-    event.preventDefault();
+    event.preventDefault(); //preventing the default bahavour when form is submitted.
     const userGuess = parseInt(userInput.value);
     console.log(userGuess);
     validateGuess(userGuess);
@@ -35,7 +37,7 @@ function validateGuess(userGuess) {
     alert("Please guess a number less than 100");
   } else {
     prevGuess.push(userGuess);
-    if (numGuess === 6) {
+    if (numGuess === 6 || remaining.innerHTML === "0") {
       displayGuess(userGuess);
       displayMessage(`Game over!!! Random number was ${randNum}`);
       endGame();
@@ -46,6 +48,7 @@ function validateGuess(userGuess) {
   }
 }
 
+//Check userInput guess if it matches with the random number or not
 function checkGuess(userGuess) {
   if (userGuess === randNum) {
     displayMessage(`You guessed it right!`);
@@ -57,6 +60,7 @@ function checkGuess(userGuess) {
   }
 }
 
+//Display number of guesses remaining
 function displayGuess(userGuess) {
   userInput.value = "";
   prevGuesses.innerHTML += ` ${userGuess}`;
@@ -65,6 +69,7 @@ function displayGuess(userGuess) {
   remaining.innerHTML = `${6 - numGuess}`;
 }
 
+//Display the conclusion passed from checkGuess() function
 function displayMessage(message) {
   low0rHi.innerHTML = `<h1>${message}</h1>`;
 }
@@ -72,7 +77,7 @@ function displayMessage(message) {
 function endGame() {
   userInput.value = "";
   butt.id = "button";
-  userInput.setAttribute("disabled", "");
+  userInput.setAttribute("disabled", ""); //disabling the user interation to the input field when end game/game over till user restarts the game
   butt.innerHTML = "Re-start";
   startOver.appendChild(butt);
   playGame = false;
@@ -88,7 +93,7 @@ function newGame() {
     numGuess = 1;
     prevGuesses.innerHTML = "";
     remaining.innerHTML = `${6 - numGuess}`;
-    userInput.removeAttribute("disabled");
+    userInput.removeAttribute("disabled"); // removing the previously disabled (attribute) input field in endGame() method to start a new game
     startOver.removeChild(butt);
     low0rHi.innerHTML = "";
 

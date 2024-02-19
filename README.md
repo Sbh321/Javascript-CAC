@@ -30,15 +30,8 @@ List the technologies/frameworks/languages used in your project.
 Provide instructions on how to set up the project locally. Include steps for installing dependencies, configuring the environment, and running the project.
 
 ```bash
-# Clone the repository
 git clone <repository-url>
-
-# Navigate to the project directory
 cd project-name
-
-# Install dependencies
 npm install
-
-# Start the development server
 npm start
 ```

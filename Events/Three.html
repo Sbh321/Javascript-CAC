@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Timer</h1>
+    <button id="startBtn">Start</button>
+    <button id="stopBtn">Stop</button>
+
+    <script>
+      const currentDate = new Date();
+      const dateString = currentDate.toDateString();
+
+      const hello = function () {
+        console.log(`Hello!! ${new Date().toTimeString()}`); //code creates a new Date object and immediately calls its toTimeString() method
+      };
+
+      let intrv;
+      document.querySelector("#startBtn").addEventListener("click", () => {
+        // this condition is needed to prevent inverval creation if one is already running
+        if (intrv == null) {
+          // here for first event intrv will have undefined which will be converted to null
+          intrv = setInterval(hello, 1000);
+        }
+      });
+      document.querySelector("#stopBtn").addEventListener("click", () => {
+        clearInterval(intrv);
+        intrv = null; //flushing the vaiable after clearInterval for efficiency
+      });
+    </script>
+  </body>
+</html>

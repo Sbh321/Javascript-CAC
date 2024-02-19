@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="inst">Click to create a button</p>
+    <script>
+      document.querySelector("#inst").addEventListener("click", () => {
+        const button = document.createElement("button");
+        button.setAttribute("id", "btn");
+        button.appendChild(document.createTextNode("Button"));
+        document.body.appendChild(button);
+
+        document.querySelector("#btn").addEventListener("click", () => {
+          console.log("Clicked");
+        });
+      });
+    </script>
+  </body>
+</html>

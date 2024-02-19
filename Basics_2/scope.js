@@ -1,3 +1,14 @@
+//Remember there are three types of scopes in JS
+//Global scope, Block scope and Function scope
+
+//Variables declared outside of any function, or at the top level of a script, have global scope. They are accessible from anywhere within the script, including inside functions.
+
+//Variables declared using var within a function have function scope. They are accessible only within the function in which they are defined.
+
+// Variables declared using let or const within a block (e.g., within curly braces {}) have block scope. They are accessible only within that block.
+
+//To declare a variable with global scope inside a function dont use any keyword But its not recomended to do so instead use different method/logic.
+
 // if (true) {
 //   let a = 1;
 //   const b = 2;
