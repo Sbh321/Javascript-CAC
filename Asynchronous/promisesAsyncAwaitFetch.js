@@ -81,17 +81,17 @@ async function consumePromise5() {
 
 consumePromise5();
 
-// async function getUsers() {
-//   try {
-//     const response = await fetch("https://jsonplaceholder.typicode.com/users");
-//     console.log(typeof response);
-//     const data = await response.json();
-//     console.log(data);
-//   } catch (error) {
-//     console.log("Error occured");
-//   }
-// }
-// getUsers();
+async function getUsers() {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    console.log(typeof response);
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log("Error occured");
+  }
+}
+getUsers();
 
 fetch("https://jsonplaceholder.typicode.com/users")
   .then(function (response) {
