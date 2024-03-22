@@ -95,7 +95,7 @@ getUsers();
 
 fetch("https://jsonplaceholder.typicode.com/users")
   .then(function (response) {
-    return response.json();
+    return response.json(); //Parsing the necessary data
   })
   .then(function (data) {
     console.log(data);
