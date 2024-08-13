@@ -7,7 +7,7 @@
 
 // Variables declared using let or const within a block (e.g., within curly braces {}) have block scope. They are accessible only within that block.
 
-//To declare a variable with global scope inside a function dont use any keyword But its not recomended to do so instead use different method/logic.
+//To declare a variable with global scope inside a function dont use any keyword. But its not recomended to do so instead use different method/logic.
 
 // if (true) {
 //   let a = 1;
@@ -49,3 +49,14 @@ const haha = function (num) {
 };
 
 haha(2);
+
+// function exampleFunction() {
+//   var a = 1;
+//   if (true) {
+//     if (true) {
+//       console.log(a);
+//     }
+//   }
+// }
+
+// exampleFunction();
